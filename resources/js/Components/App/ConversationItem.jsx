@@ -1,7 +1,7 @@
 import { Link, usePage } from "@inertiajs/react";
-import { UserAvatar } from "./UserAvatar";
-import { GroupAvatar } from "./GroupAvatar";
 import { UserOptionsDropdown } from "./UserOptionsDropdown";
+import UserAvatar from "./UserAvatar";
+import GroupAvatar from "./GroupAvatar";
 
 const ConversationItem = ({
     conversation,
@@ -10,7 +10,7 @@ const ConversationItem = ({
 }) => {
     const page = usePage();
     const currentUser = page.props.auth.user;
-    let classes = "border-transparent";
+    let classes = " border-transparent";
 
     if (selectedConversation) {
         if (
@@ -47,6 +47,7 @@ const ConversationItem = ({
             {conversation.is_user && (
                 <UserAvatar user={conversation} online={online} />
             )}
+            {conversation.is_group && <GroupAvatar />}
             <div
                 className={
                     `flex-1 text-xs max-w-full overflow-hidden ` +
