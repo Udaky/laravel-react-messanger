@@ -7,6 +7,7 @@ import {
 } from "@headlessui/react";
 import {
     EllipsisVerticalIcon,
+    LockClosedIcon,
     LockOpenIcon,
     ShieldCheckIcon,
     UserIcon,
@@ -77,6 +78,12 @@ export const UserOptionsDropdown = ({ conversation }) => {
                                             <>
                                                 <LockOpenIcon className="w-4 h-4 mr-2" />{" "}
                                                 Unblock User
+                                            </>
+                                        )}
+                                        {!conversation.blocked_at && (
+                                            <>
+                                                <LockClosedIcon className="w-4 h-4 mr-2" />{" "}
+                                                Block User
                                             </>
                                         )}
                                     </button>
