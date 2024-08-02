@@ -32,7 +32,7 @@ class MessageController extends Controller
     public function byGroup(Group $group){
         $message = Message::where('group_id',$group->id)
         ->latest()
-        ->paginate(50);
+        ->paginate(10);
 
         return inertia('Home', [
             'selectedConversation' => $group->toConversationArray(),
