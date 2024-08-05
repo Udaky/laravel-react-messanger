@@ -29,9 +29,9 @@ const MessageItem = ({ message }) => {
             <div
                 className={
                     "chat-bubble relative " +
-                    (message.sender_id === currentUser.id)
+                    (message.sender_id === currentUser.id
                         ? " chat-bubble-info"
-                        : ""
+                        : "")
                 }
             >
                 <div className="chat-message">
