@@ -2,6 +2,7 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
+import { useEventBus } from "@/EventBus";
 import { Link, usePage } from "@inertiajs/react";
 import { useEffect, useState } from "react";
 
@@ -11,6 +12,7 @@ export default function Authenticated({ header, children }) {
     const conversations = page.props.conversations;
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
+    const { emit } = useEventBus();
 
     useEffect(() => {
         conversations.forEach((conversation) => {
